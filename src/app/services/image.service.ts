@@ -24,8 +24,14 @@ export class ImageService {
   }
 
   getImages(): any {
-    // return firebase.storage().ref().child('/uploads/Jellyfish.jpg').getDownloadURL();
-    // return this.db.list('/uploads').valueChanges();
+    return this.db.list('/uploads').snapshotChanges().map((action: any) => {
+        return action.map((item) => {
+          return {
+            $key: item.payload.key,
+            url: item.payload.val()
+          };
+        });
+      });
   
   }
 

@@ -1,5 +1,5 @@
 <div class="container">
-  <form #loginForm="ngForm">
+  <form #loginForm="ngForm" class="form">
     <h1 class="login-title">Log In</h1>
     <hr>
     <div class="form-group">
@@ -17,7 +17,7 @@
       #passwordControl="ngModel" 
       placeholder="Password" 
       [(ngModel)]="password" 
-      name="password" maxlength="70" type="password" name="password">
+      name="password" maxlength="70" type="password" name="password" required>
     </div>
     <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-info" (click)="signIn()">Sign In</button>
     <p *ngIf="msg" class="text-danger">{{msg}}</p>

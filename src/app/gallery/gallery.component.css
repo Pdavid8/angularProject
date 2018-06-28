@@ -19,3 +19,13 @@ li {
 h2 {
     margin-bottom: 20px;
 }
+
+hr {
+    background-color: #5bc0de;
+    height: 2px;
+    width: 180px;
+}
+
+.row {
+    text-align: center;
+}

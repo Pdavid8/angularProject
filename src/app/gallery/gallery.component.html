@@ -1,11 +1,13 @@
 <div class="row">
   <h2>Latest Photos</h2>
+  <hr>
   <ul id="thumbnailsList">
-      {{ this.images | async | json }}
-      <!-- <li *ngFor="let image of images | async" class="img">
+      <li *ngFor="let image of this.images | async" class="img">
           <a [routerLink]="['/image', image.$key]">
-          <img src="{{image.url}}" class="tn">
-          </a>
-      </li> -->
+            <div class="col-sm-4">
+              <img src="{{image.url}}" class="img-responsive tn">
+            </div>
+            </a>
+      </li>
   </ul>
 </div>

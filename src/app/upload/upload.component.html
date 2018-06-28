@@ -10,8 +10,10 @@
     Progress: {{upload?.progress}}% Complete
   </div>
   <h2 class="heading">Upload New Images</h2>
-  <input type="file" 
+  <hr>
+  <input type="file" id="files" style="display: none"
   (change)="handleFiles($event)" multiple>
+  <label for="files">Choose from Library</label>
   <button class="btn btn-primary" 
   (click)="uploadFiles()">Upload Images</button>
 </div>

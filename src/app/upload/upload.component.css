@@ -9,6 +9,17 @@
     
 }
 
+label {
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    font-weight: 150;
+    border: 1px solid;
+    padding: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 3px;
+    
+}
+
 .heading {
     font-size: 24px;
     text-align: center;
@@ -21,7 +32,7 @@ button {
 }
 
 input {
-    height: 40px;    
+    height: 30px;    
 }
 
 hr {

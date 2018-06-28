@@ -32,15 +32,17 @@ export class UploadService {
       },
       // 3) success observer 
       ():any => {
-        upload.url = uploadTask.snapshot.downloadURL;
-        upload.name = upload.file.name;
-        this.saveFileData(upload);
+	      uploadTask.snapshot.ref.getDownloadURL().then(downloadUrl => {
+		      upload.url = downloadUrl;
+		      upload.name = upload.file.name;
+		      this.saveFileData(upload);
+	      });
         }
       );
   }
   
   private saveFileData(upload: Upload) {
-    this.db.list('${this.basePath}/').push(upload);
+    this.db.list(`${this.basePath}/`).push(upload.url);
     console.log('File saved!: ' + upload.url);
   }
 }
